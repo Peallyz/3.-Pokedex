@@ -1,7 +1,7 @@
 const searchInput = document.querySelector(".recherche__poke input");
 let allPokemon = [];
 let finPokemon = [];
-const keyAPI = "https://pokeapi.co/api/v2/pokemon?limit=151";
+const keyAPI = "https://pokeapi.co/api/v2/pokemon?limit=1126";
 const cartes = document.querySelector(".liste__poke");
 
 const types = {
@@ -21,6 +21,10 @@ const types = {
   rock: "#B6A136",
   ghost: "#735797",
   ice: "#96D9D6",
+  steel: "#B7B7CE",
+  dragon: "#6F35FC",
+  dark: "#705746",
+  fairy: "#D685AD",
 };
 
 function fetchPokemonBase() {
@@ -60,6 +64,7 @@ function fetchPokemonComplet(pokemon) {
                 return a.id - b.id;
               })
               .slice(0, 21);
+            console.log();
             createCard(finPokemon);
           }
 
